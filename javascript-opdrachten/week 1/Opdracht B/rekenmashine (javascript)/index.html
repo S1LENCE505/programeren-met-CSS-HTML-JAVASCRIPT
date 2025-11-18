@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>rekenmashine</h1>
+  <button onclick="plus()">+</button>
+
+
+  <script>
+    function plus() {
+      let getal1 = prompt("voer een getal in");
+      let getal2 = prompt("voer nog een getal in");
+
+      // input naar nummers
+      getal1 = Number(getal1);
+      getal2 = Number(getal2);
+
+      // optellen
+      let resultaat = getal1 + getal2;
+
+      // resutaat
+      alert("=" + resultaat);
+    }
+  </script>
+  <button onclick="min()">-</button>
+
+  <script>
+    function min() {
+      let getal1 = prompt("voer een getal in");
+      let getal2 = prompt("voer nog een getal in");
+
+      // input naar nummers
+      getal1 = Number(getal1);
+      getal2 = Number(getal2);
+
+      // optellen
+      let resultaat = getal1 - getal2;
+
+      // resutaat
+      alert("=" + resultaat);
+    }
+  </script>
+
+  <button onclick="keer()">*</button>
+
+  <script>
+    function keer() {
+      let getal1 = prompt("voer een getal in");
+      let getal2 = prompt("voer nog een getal in");
+
+      // input naar nummers
+      getal1 = Number(getal1);
+      getal2 = Number(getal2);
+
+      // optellen
+      let resultaat = getal1 * getal2;
+
+      // resutaat
+      alert("=" + resultaat);
+    }
+  </script>
+
+  <button onclick="deel()">/</button>
+
+  <script>
+    function deel() {
+      let getal1 = prompt("voer een getal in");
+      let getal2 = prompt("voer nog een getal in");
+
+      // input naar nummers
+      getal1 = Number(getal1);
+      getal2 = Number(getal2);
+
+      // optellen
+      let resultaat = getal1 / getal2;
+
+      // resutaat
+      alert("=" + resultaat);
+    }
+  </script>
+</body>
+
+</html>
