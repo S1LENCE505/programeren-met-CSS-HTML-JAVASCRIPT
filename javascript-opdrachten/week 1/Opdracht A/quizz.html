@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>quiz</title>
+</head>
+<body>
+<button onclick="quiz()">Start</button>
+
+<p id="naam"></p>
+<p id="kleur"></p>
+<p id="pizza"></p>
+<p id="getal"></p>
+
+<script>
+    function quiz() {
+        let naam = prompt("Wat is uw naam?");
+        if (naam === "") {
+            alert("voer iets in")
+            return;
+        } else {
+            console.log(naam);
+            let kleur = prompt("Favoriete kleur??");
+            if (kleur === "") {
+                alert("voer iets in")
+                return;
+            } else {
+                console.log(kleur);
+                let pizza = confirm("Vind je pizza lekker?")
+                console.log(pizza);
+                let getal = prompt("favo getal?");
+                if (getal === "") {
+                    alert("voer iets in")
+                    return;
+                } else {
+                    console.log(getal);
+
+
+                    document.getElementById("naam").innerText = "je naam is " + naam
+                    document.getElementById("kleur").innerText = "je lievelings kleur is " + kleur
+                    document.getElementById("pizza").innerText = "pizza vind je lekker " + pizza
+                    document.getElementById("getal").innerText = "je favo getal is " + getal
+
+
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
