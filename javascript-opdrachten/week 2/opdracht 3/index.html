@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <button onclick="vragen()">Start vragen</button>
+    <H1 id="Vnaam"></H1>
+    <H1 id="Anaam"></H1>
+    <H1 id="leeftijd"></H1>
+    <H1 id="woonplaats"></H1>
+    <H1 id="studie"></H1>
+
+
+    <script>
+        function vragen() {
+
+            //voornaam
+            let Vnaam = prompt("Wat is uw voornaam");
+            if (Vnaam === "") {
+                alert("voer iets in")
+                return;
+            }
+            else {
+            }
+
+            //achternaam
+            let Anaam = prompt("Wat is uw achternaam?")
+            if (Anaam === "") {
+                alert("voer iets if")
+                return;
+            } else {
+            }
+
+            let volledigeNaam = Vnaam + " " + Anaam;
+
+
+
+            //leeftijd
+            let leeftijd = Number(prompt("wat is uw leeftijd?"));
+            if (leeftijd === "") {
+                alert("voer iets in")
+                return; x
+            } else {
+            }
+
+            let geboorteDatum = 2025 - leeftijd;
+
+
+
+            //woonplaats
+            let woonplaats = prompt("wat is uw woonplaats?");
+            if (woonplaats === "") {
+                alert("voer iets in")
+                return;
+            }
+            else {
+
+            }
+
+            //stuudeer je?
+            let studie = confirm("ben je student?");
+            if (studie === "") {
+                alert("voer iets in")
+                return;
+            } else {
+
+            }
+
+
+            console.log("=== Profiel ===\n"
+
+                + "Volledige naam: " + volledigeNaam + "\n"
+                + "Geboortejaar: " + geboorteDatum + "\n"
+                + "Woonplaats: " + woonplaats + "\n"
+                + "Student: " + studie + "\n"
+                + "================="
+            );
+
+            typeof Vnaam === 'string'
+            console.log("type van voornaam"+" = "+typeof Vnaam);
+
+            typeof Anaam === 'string'
+            console.log("type van achternaam"+" = "+typeof Anaam);
+
+            typeof leeftijd === 'Number'
+            console.log("type van leeftijd"+" = "+typeof leeftijd);
+
+            typeof woonplaats === 'string'
+            console.log("type van woonplaats"+" = "+typeof woonplaats);
+
+            typeof studie === 'boolean'
+            console.log("type van studie"+" = "+typeof studie);
+        }
+
+    </script>
+</body>
+
+</html>
