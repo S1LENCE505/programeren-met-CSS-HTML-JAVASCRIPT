@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Rekenmachine</h1>
+    <div id="getal1">Getal 1: <span id="num1">5</span></div>
+    <div id="getal2">Getal 2: <span id="num2">3</span></div>
+    <hr>
+
+    <div id="optellen">Optellen: <span id="plus"></span></div>
+    <div id="aftrekken">Aftrekken: <span id="min"></span></div>
+    <div id="vermenigvuldigen">Vermenigvuldigen: <span id="keer"></span></div>
+    <div id="delen">Delen: <span id="gedeeld"></span></div>
+    <div id="modulus">Rest bij deling: <span id="rest"></span></div>
+
+
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            border: 3px solid #000000;
+            padding: 20px 20px 50px 20px;
+            max-width: 40%;
+        }
+
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        #getal1,
+        #getal2 {
+            font-size: 18px;
+            padding-bottom: 10px;
+        }
+
+        #optellen {
+            color: green;
+            padding-bottom: 10px;
+        }
+
+        #aftrekken {
+            color: red;
+            padding-bottom: 10px;
+        }
+
+        #vermenigvuldigen {
+            color: blue;
+            padding-bottom: 10px;
+        }
+
+        #delen {
+            color: orange;
+            padding-bottom: 10px;
+        }
+
+        #modulus {
+            color: purple;
+        }
+    </style>
+
+    <script>
+        let getal1 = 5;
+        let getal2 = 3;
+
+        // Berekeningen
+        let optellen = getal1 + getal2;
+        let aftrekken = getal1 - getal2;
+        let vermenigvuldigen = getal1 * getal2;
+        let delen = getal1 / getal2;
+        let modulus = getal1 % getal2;
+
+
+        // Resultaten weergeven
+        document.getElementById("plus").innerText = optellen;
+        document.getElementById("min").innerText = aftrekken;
+        document.getElementById("keer").innerText = vermenigvuldigen;
+        document.getElementById("gedeeld").innerText = delen;
+        document.getElementById("rest").innerText = modulus;
+
+
+    </script>
+</body>
+
+</html>
