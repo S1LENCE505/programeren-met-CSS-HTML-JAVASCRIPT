@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Systeem</title>
+</head>
+
+<body>
+    <h1>Login Systeem</h1>
+
+    <form>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button type="button" onclick="login()">Login</button>
+    </form>
+
+    <script>
+
+        let inlogpogingen = 0;
+
+        let admin = {
+            username: "admin",
+            password: "ww1"
+        };
+
+        let user = {
+            username: "user",
+            password: "ww2"
+        };
+
+        function login() {
+            let Username = document.getElementById("username").value;
+            let wachtWoord = document.getElementById("password").value;
+
+            if (Username === admin.username && wachtWoord === admin.password) {
+                alert("Welkom administrator!");
+                inlogpogingen++;
+                console.log("Aantal inlogpogingen: " + inlogpogingen);
+            }
+            else if (Username === user.username && wachtWoord === user.password) {
+                alert("Welkom gebruiker!");
+                inlogpogingen++;
+                console.log("Aantal inlogpogingen: " + inlogpogingen);
+            }
+            else {
+                inlogpogingen++;
+                console.log("Aantal inlogpogingen: " + inlogpogingen);
+                alert("Username of password incorrect");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
