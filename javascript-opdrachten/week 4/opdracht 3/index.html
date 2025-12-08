@@ -12,28 +12,33 @@
     <div id="jongvolwassene"></div>
     <div id="volwassene"></div>
     <div id="senior"></div>
+    <div id="ongeldige leeftijd"></div>
 
 
     <script>
-        let age = 45;
+        let age = prompt("Voer je leeftijd in:");
+
+        if (age.isNaN || age < 0) {
+            document.getElementById("ongeldige leeftijd").innerText = "Ongeldige leeftijd.";
+        }
 
         if (age >= 0 && age <= 12) {
-            document.getElementById("kind").innerText = "Je bent een kind.";
+            document.getElementById("kind").innerText = "Je bent een kind.👶";
         }
         else if (age >= 13 && age <= 17) {
-            document.getElementById("tiener").innerText = "Je bent een tiener.";
+            document.getElementById("tiener").innerText = "Je bent een tiener. 👧 ";
         }
         else if (age >= 18 && age <= 24) {
-            document.getElementById("jongvolwassene").innerText = "Je bent een jongvolwassene.";
+            document.getElementById("jongvolwassene").innerText = "Je bent een jongvolwassene.🧑";
         }
-        else if (age >= 36 && age <= 60) {
-            document.getElementById("volwassene").innerText = "Je bent een volwassene.";
+        else if (age >= 25 && age <= 64) {
+            document.getElementById("volwassene").innerText = "Je bent een volwassene.👨";
         }
         else if (age > 65) {
-            document.getElementById("senior").innerText = "Je bent een senior.";
+            document.getElementById("senior").innerText = "Je bent een senior.👴";
         }
         else {
-            console.log("Ongeldige leeftijd.");
+            document.getElementById("ongeldige leeftijd").innerText = "Ongeldige leeftijd.";
         }
 
 
