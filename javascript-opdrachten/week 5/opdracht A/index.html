@@ -2,10 +2,10 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Optel Applicatie</title>
+    <title>rekenmashine</title>
 </head>
 <body>
-    <h1>Optel Applicatie</h1>
+    <h1>rekenmashine</h1>
     
     <form>
         <input type="number" id="start" placeholder="Start getal" min="-1000" max="1000">
@@ -19,9 +19,17 @@
         function bereken() {
             const start = parseInt(document.getElementById('start').value);
             const eind = parseInt(document.getElementById('eind').value);
-            let som = start + eind;
+            let som = 0;
+            let antwoord = start + eind;
+            let delen = [];
 
-            document.getElementById('resultaat').innerText = ` ${start} + ${eind} = ${som}`;
+            for (let i = start; i <= eind; delen.push(i++)) {
+                som += i;
+            }
+            
+            alert('De stappen tussen start en eind zijn:' + delen.join('+') + ' = ' + som);
+  
+            document.getElementById('resultaat').innerText = ` ${start} + ${eind} = ${antwoord}`;
         }
 
     </script>
