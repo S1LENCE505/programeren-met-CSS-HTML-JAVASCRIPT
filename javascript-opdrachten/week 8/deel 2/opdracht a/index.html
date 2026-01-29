@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Back</title>
 </head>
+
 <body>
     <h1 id="msg"></h1>
     <p id="info"></p>
@@ -12,10 +14,10 @@
 
     <script>
         function timeAgo(timestamp) {
-            const diff = Date.now() - timestamp;
-            const mins = Math.floor(diff / 60000);
-            const hrs = Math.floor(diff / 3600000);
-            const days = Math.floor(diff / 86400000);
+            let diff = Date.now() - timestamp;
+            let mins = Math.floor(diff / 60000);
+            let hrs = Math.floor(diff / 3600000);
+            let days = Math.floor(diff / 86400000);
             if (mins < 60) return `${mins} minuten geleden`;
             if (hrs < 24) return `${hrs} uur geleden`;
             return `${days} dagen geleden`;
@@ -24,7 +26,7 @@
         let name = localStorage.getItem('name');
         let visits = parseInt(localStorage.getItem('visits')) || 0;
         let last = parseInt(localStorage.getItem('last')) || 0;
-        
+
         if (!name) {
             name = prompt('Naam?') || 'Bezoeker';
             visits = 1;
@@ -42,7 +44,7 @@
         document.cookie = `name=${name};max-age=99999;path=/`;
         document.cookie = `visits=${visits};max-age=999999;path=/`;
         document.cookie = `last=${last};max-age=999999;path=/`;
-        
+
         document.getElementById('info').innerHTML = `Bezoeken: ${visits} | Vorig bezoek: ${timeAgo(last)}`;
 
         function reset() {
@@ -52,6 +54,14 @@
                 location.reload();
             }
         }
+
+        // let jSonobj = {
+        //     gebruiker:
+        // };
+
+        // let jsonString = JSON.stringify(jSonobj);
+        // console.log(jsonString);
     </script>
 </body>
+
 </html>
