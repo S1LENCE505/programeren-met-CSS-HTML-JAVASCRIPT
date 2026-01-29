@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        class Artikel {
+            constructor(naam, prijs, voorraad, merk) {
+                this.naam = naam;
+                this.prijs = prijs;
+                this.voorraad = voorraad;
+                this.merk = merk;
+            }
+
+            prijsVerhoging(amount) {
+                this.prijs += amount;
+            }
+        }
+
+        let test = new Artikel("Robbe", 67, 430, "esteban");
+        let test2 = new Artikel("esteban", 37, 480, "BOIII");
+        let test3 = new Artikel("esteban", 27, 480, "BOIII");
+        let test4 = new Artikel("esteban", 17, 480, "BOIII");
+        let test5 = new Artikel("esteban", 7, 480, "BOIII");
+
+        let testgroup = [test, test2, test3, test4, test5];
+        
+        
+        // test.prijsVerhoging(10);
+        console.log(testgroup);
+        
+        for (let i= 0; i<5; i++){
+            testgroup[i].prijsVerhoging(10); // test
+        }
+
+        console.log(testgroup);
+
+    </script>
+</body>
+
+</html>
