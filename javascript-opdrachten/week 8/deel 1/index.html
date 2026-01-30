@@ -1,24 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
 <body>
 
+<div id="gallery">
+    <button id="prevBtn">‹</button>
+    <img id="mainImage" src="image1.jpg" alt="Foto 1">
+    <button id="nextBtn">›</button>
+    <div id="indicators"></div>
+</div>
 
 
-    <script>
-        const products = [
-            { id: 1, name: 'Laptop', category: 'electronics', price: 899, stock: 5, featured: true },
-            { id: 2, name: 'Muis', category: 'accessories', price: 25, stock: 50, featured: false },
-            // ... meer products
-        ];
+<script>
 
-    </script>
+const images = ['DJT 1.webp', 'bill clinton 1.webp', 'epstein 1.webp', 'random guy 1.webp', 'SH 1.webp']
+
+let currentIndex = 0;
+
+    
+let indicatorsDiv = document.getElementById('indicators');
+
+
+for (let i = 0; i < images.length; i++) {
+    let dot = document.createElement('span');
+    dot.classList.add('dot');
+
+    if (i === 0) {
+        dot.classList.add('active');
+    }
+
+    indicatorsDiv.appendChild(dot);
+}
+
+function showImage(index) {
+
+    let mainImage = document.getElementById('mainImage');
+    mainImage.src = images[index];
+    mainImage.alt = 'Foto ' + (index + 1);
+
+    let dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, i) => {
+        if (i === index) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+document.getElementById('prevBtn').addEventListener('click', function() {
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+    }
+
+    showImage(currentIndex);
+});
+
+document.getElementById('nextBtn').addEventListener('click', function() {
+    currentIndex++;
+
+    if (currentIndex >= images.length) {
+        currentIndex = 0;
+    }
+
+    showImage(currentIndex);
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowLeft') {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        }
+        showImage(currentIndex);
+    }
+    else if (event.key === 'ArrowRight') {
+        currentIndex++;
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+        showImage(currentIndex);
+    }
+});
+
+
+
+
+</script>
+
 </body>
-
 </html>
