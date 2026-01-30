@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form id="registerForm">
+    <div class="form-group">
+        <label>Gebruikersnaam</label>
+        <input type="text" name="username" id="username">
+        <span class="validation-message"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" id="email">
+        <span class="validation-message"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Wachtwoord</label>
+        <input type="password" name="password" id="password">
+        <div class="strength-meter"></div>
+        <span class="validation-message"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Bevestig Wachtwoord</label>
+        <input type="password" name="confirmPassword" id="confirmPassword">
+        <span class="validation-message"></span>
+    </div>
+
+    <button type="submit" id="submitBtn" disabled>Registreren</button>
+</form>
+
+
+<script>
+    let namecorrect = false
+    let emailcorrect = false
+    let passwordcorrect = false
+    let passwordmatch = false
+
+    let name = document.getElementById("username").value
+
+    if (name <=20 && name >= 3){
+        
+    }
+
+    if(namecorrect === true && emailcorrect === true && passwordcorrect === true && passwordmatch === true){
+        enableSubmitButton()
+    }
+
+        function enableSubmitButton() {
+        const submitButton = document.getElementById('submitBtn');
+        submitButton.disabled = false;
+    }
+
+    
+
+</script>
+
+</body>
+</html>
