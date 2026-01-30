@@ -1,36 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 </head>
-
 <body>
-    <form id="loginForm">
-        <input type="text" id="username" placeholder="gebruikersnaam" name="username" required>
-        <input type="password" id="password" placeholder="Wachtwoord">
-        <label>
-            <input type="checkbox" id="rememberMe">
-            Onthoud mijn gebruikersnaam
-        </label>
-        <button type="submit">Inloggen</button>
-    </form>
+<h1>Inloggen</h1>
+
+<form id="loginForm">
+    <input type="text" id="username" placeholder="Gebruikersnaam">
+    <br><br>
+    <input type="password" id="password" placeholder="Wachtwoord">
+    <br><br>
+    <label>
+        <input type="checkbox" id="rememberMe">
+        Onthoud mijn gebruikersnaam
+    </label>
+    <br><br>
+    <button type="submit">Inloggen</button>
+</form>
+
+<script>
+    let form = document.getElementById('loginForm');
+    let usernameInput = document.getElementById('username');
+    let rememberMeCheckbox = document.getElementById('rememberMe');
 
 
-    <script>
-        document.getElementById("submitBtn").addEventListener("click", function (event) {
-            const username = document.getElementById("username").value.trim();
-            if (username === "") {
-                alert("Voer een gebruikersnaam in");
-                event.preventDefault();
-            }
-        });
+    window.addEventListener('DOMContentLoaded', () => {
+        let savedUsername = localStorage.getItem('rememberedUsername');
 
-        
+        if (savedUsername) {
+            usernameInput.value = savedUsername;
+            rememberMeCheckbox.checked = true;
+        }
+    });
 
-    </script>
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let username = usernameInput.value.trim();
+
+
+        if (username === '') {
+            alert('Gebruikersnaam is verplicht');
+            return;
+        }
+
+
+        if (rememberMeCheckbox.checked) {
+            localStorage.setItem('rememberedUsername', username);
+        } else {
+            localStorage.removeItem('rememberedUsername');
+        }
+
+
+        alert('Login succesvol!');
+    });
+</script>
 </body>
-
 </html>
