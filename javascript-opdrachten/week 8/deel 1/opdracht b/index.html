@@ -23,14 +23,14 @@
 
     <div class="form-group">
         <label>Wachtwoord</label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" required>
         <div class="strength-meter"></div>
         <span class="validation-message"></span>
     </div>
 
     <div class="form-group">
         <label>Bevestig Wachtwoord</label>
-        <input type="password" name="confirmPassword" id="confirmPassword">
+        <input type="password" name="confirmPassword" id="confirmPassword" required>
         <span class="validation-message"></span>
     </div>
 
@@ -50,7 +50,7 @@
         
     }
 
-    if(namecorrect === true && emailcorrect === true && passwordcorrect === true && passwordmatch === true){
+    if(namecorrect === false && emailcorrect === false && passwordcorrect === false && passwordmatch === false){
         enableSubmitButton()
     }
 
